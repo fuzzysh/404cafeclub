@@ -1,0 +1,352 @@
+/* fonts */
+@font-face {
+	font-family: "TamaConnect";
+	src: url(../fonts/tamaconnecttype.ttf);
+}
+
+@font-face {
+	font-family: "NintendoDS-BIOS";
+	src: url(../fonts/nds-true-bios.otf);
+}
+
+@font-face {
+	font-family: "Synkopy";
+	src: url(../fonts/Synkopy/Synkopy-Flipside.otf);
+}
+
+@font-face {
+	font-family: "NocturnalSubway";
+	src: url(../fonts/YutaONE_curated/NocturnalSubway/NocturnalSubway.otf);
+}
+
+/* start light mode styling */
+:root {
+	--text: #49628a;
+	--border: #E5E8F5;
+	--accent: #788fda;
+	--bg: #DBE2FF;
+	--gradientTop: #ffffff;
+	--gradientBottom: #EEF4FF;
+	--bgimage: url('../images/bg/bg-ds_blue.png');
+}
+
+header {
+	background: url('../images/dithered/powerlines_dithered.jpg');
+	background-position: top -125px left 0px;
+}
+
+/* end light mode styling */
+
+
+/* start dark mode styling */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--text: white;
+		--border: #6478b7;
+		--accent: #89b2ff;
+		--bg: #2d3875;
+		--gradientBottom: #262f5e;
+		--gradientTop: #445899;
+		--bgimage: url('../images/bg/bg-ds_blueinvert.png');
+
+		a {
+			color: #89b2ff;
+		}
+	}
+
+	header {
+		background: url('../images/dithered/powerlines_dithered.jpg');
+		background-position: bottom -90px left 0px;
+	}
+
+	header span {
+		text-shadow: 1px 1px var(--gradientBottom),
+			-1px 1px var(--gradientBottom),
+			1px -1px var(--border),
+			-1px -1px var(--border);
+		color: var(--text);
+
+	}
+}
+
+/* end dark mode styling */
+
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	padding: 10px;
+	font-family: "NintendoDS-BIOS";
+	font-size: 1.25rem;
+	letter-spacing: 0.033333333333333em;
+	color: var(--text);
+	max-height: 98vh;
+
+	/* page background pattern */
+
+	background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
+	background-image: var(--bgimage);
+}
+
+/* original styling
+	font-family: 'MS PGothic', sans-serif;
+	background-color: var(--gradientTop);
+	background-image:  linear-gradient(30deg, var(--bg) 12%, transparent 12.5%, transparent 87%, var(--bg) 87.5%, var(--bg)), linear-gradient(150deg, var(--bg) 12%, transparent 12.5%, transparent 87%, var(--bg) 87.5%, var(--bg)), linear-gradient(30deg, var(--bg) 12%, transparent 12.5%, transparent 87%, var(--bg) 87.5%, var(--bg)), linear-gradient(150deg, var(--bg) 12%, transparent 12.5%, transparent 87%, var(--bg) 87.5%, var(--bg)), linear-gradient(60deg, var(--bg) 25%, transparent 25.5%, transparent 75%, var(--bg) 75%, var(--bg)), linear-gradient(60deg, var(--bg) 25%, transparent 25.5%, transparent 75%, var(--bg) 75%, var(--bg));
+	background-size: 20px 35px;
+*/
+
+.container {
+	max-width: 60rem;
+	margin: 3vw auto 12px auto;
+	border: 6px ridge var(--border);
+	outline: 3px solid var(--gradientTop);
+	outline-offset: 4px;
+	border-radius: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 5px;
+	gap: 5px;
+
+	/* container background pattern */
+	background-color: var(--bg);
+}
+
+/* original container styling	
+background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, var(--gradientBottom) 9px ), repeating-linear-gradient( var(--bg), var(--bg));
+background-color: var(--gradientBottom);
+*/
+
+/* these control the column widths */
+.small {
+	flex: 1 1 9%;
+}
+
+.large {
+	flex: 1 1 82%;
+}
+
+.full {
+	flex: 1 1 100%;
+}
+
+.half {
+	flex: 1 1 49%;
+}
+
+
+header {
+	background-size: cover;
+	width: 100%;
+	height: 120px;
+	/* change banner height here*/
+	border: 2px ridge var(--border);
+	border-radius: 5px;
+	position: relative;
+	font-family: "Synkopy";
+}
+
+header span {
+	font-size: 3.5rem;
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+	margin: 10px;
+	text-shadow: 1px 1px #262f5e,
+		-1px 1px #262f5e,
+		1px -1px #6478b7,
+		-1px -1px #6478b7;
+	color: white;
+}
+
+/* orignal header styling
+background-position: center; 
+font-weight: bold;
+text-shadow: 1px 1px var(--text),
+		-1px 1px var(--text),
+		1px -1px var(--accent),
+		-1px -1px var(--accent);
+color: var(--gradientTop);
+*/
+
+nav {
+	border: 2px ridge var(--border);
+	border-radius: 5px;
+	padding: 5px;
+	background: linear-gradient(var(--gradientTop), var(--gradientBottom));
+}
+
+nav div {
+	text-align: center;
+	font-size: 1rem;
+	font-family: "TamaConnect";
+	margin: 5px 5px 10px 5px;
+}
+
+nav a {
+	display: block;
+	margin: 5px;
+	background: linear-gradient(to right, var(--bg), var(--gradientBottom));
+	border-radius: 5px;
+	padding: 2px 7px;
+	text-decoration: none;
+}
+
+nav a:link,
+nav a:visited {
+	color: var(--text);
+}
+
+nav a:hover,
+nav a:focus {
+	background: linear-gradient(to right, var(--bg), var(--gradientBottom), var(--gradientTop));
+}
+
+/* optional button styling like in the preview */
+div.small>img {
+	display: block;
+	margin: 5px auto;
+	border: 2px ridge var(--border);
+	border-radius: 5px;
+}
+
+
+section {
+	border: 2px ridge var(--border);
+	border-radius: 5px;
+	background: linear-gradient(var(--gradientTop), var(--gradientBottom));
+	padding: 5px;
+}
+
+
+footer {
+	text-align: center;
+	margin-bottom: 5vw;
+	font-size: 1.2rem;
+}
+
+footer a {
+	text-decoration: none;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 5px;
+	line-height: 1.2;
+}
+
+h1 {
+	font-size: 2rem;
+	font-family: "NocturnalSubway";
+	font-weight: normal;
+	text-align: center;
+
+}
+
+/*letter-spacing: 2px;
+	border-bottom: 2px ridge var(--border);
+	padding-bottom: 5px;*/
+
+h2 {
+	font-size: 1.1rem;
+	font-family: "TamaConnect";
+	font-weight: normal;
+	text-align: center;
+	border-bottom: 2px ridge var(--border);
+	padding-bottom: 10px;
+}
+
+h3 {
+	font-size: 1.1rem;
+	font-family: "TamaConnect";
+	font-weight: normal;
+	text-align: center;
+}
+
+h4 {
+	font-size: 1.5rem;
+}
+
+h5 {
+	font-size: 1.3rem;
+	color: var(--accent);
+}
+
+h6 {
+	font-size: 1.3rem;
+	color: var(--accent);
+	padding-left: 12px;
+}
+
+/* prevents overflow on smaller screens */
+img {
+	max-width: 100%;
+
+}
+
+pre {
+	overflow-x: auto;
+}
+
+
+a:hover,
+a:focus {
+	font-style: italic;
+}
+
+a:visited {
+	color: var(--accent);
+}
+
+.centerimg {
+	text-align: center;
+}
+
+.scrollContainer {
+	display: flex;
+	align-items: stretch;
+	flex-direction: column;
+}
+
+.scroll {
+	flex-grow: 1;
+	position: relative;
+	overflow-y: scroll;
+	scrollbar-color: #919ed7 #e5e8f5;
+}
+
+.scroll>div {
+	position: absolute;
+	width: 100%;
+	padding-right: 10px;
+}
+
+.align {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+.flip-horizontally {
+	transform: scaleX(-1);
+}
+
+#analysis {
+	flex: 1 1 15%;
+}
+
+#schedule {
+	border-radius: 10px;
+}
+
+iframe {
+	border-radius: 10px;
+	margin-top: 7px;
+}
