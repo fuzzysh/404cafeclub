@@ -319,6 +319,9 @@ a:visited {
         max-height: 950px; /* this is hardcoded to make it match the length of the content to its left */
 	scrollbar-color: #919ed7 #e5e8f5;
 }
+.scroll article {
+        margin-bottom: 25px;
+}
 
 .align {
 	display: flex;
