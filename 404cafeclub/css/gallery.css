@@ -1,3 +1,9 @@
+#version-headings {
+        display: flex;
+        justify-content: space-around;
+        background: none;
+        border-style: none;
+}
 #png-columns-group {
         display: flex;
         flex-direction: row;
