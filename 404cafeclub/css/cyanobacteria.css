@@ -363,3 +363,7 @@ hr {
 	color: var(--accent);
 	width: 400px;
 }
+
+.analysis-heading {
+        font-weight: bold;
+}
