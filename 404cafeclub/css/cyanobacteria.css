@@ -311,12 +311,6 @@ a:visited {
 	text-align: center;
 }
 
-.scrollContainer {
-	display: flex;
-	align-items: stretch;
-	flex-direction: column;
-}
-
 .scroll {
 	flex-grow: 1;
 	position: relative;
