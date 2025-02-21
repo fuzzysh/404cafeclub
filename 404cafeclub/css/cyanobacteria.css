@@ -312,16 +312,12 @@ a:visited {
 }
 
 .scroll {
+        display: flex;
+        flex-direction: column;
 	flex-grow: 1;
-	position: relative;
 	overflow-y: scroll;
+        max-height: 950px;
 	scrollbar-color: #919ed7 #e5e8f5;
-}
-
-.scroll>div {
-	position: absolute;
-	width: 100%;
-	padding-right: 10px;
 }
 
 .align {
