@@ -316,7 +316,7 @@ a:visited {
         flex-direction: column;
 	flex-grow: 1;
 	overflow-y: scroll;
-        max-height: 950px;
+        max-height: 950px; /* this is hardcoded to make it match the length of the content to its left */
 	scrollbar-color: #919ed7 #e5e8f5;
 }
 
@@ -356,4 +356,7 @@ hr {
 
 .analysis-heading {
         font-weight: bold;
+}
+@media only screen and (max-width: 773px) {
+        .scroll{ max-height: 500px;}
 }
