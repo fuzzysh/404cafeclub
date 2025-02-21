@@ -80,7 +80,7 @@ body {
 	padding: 10px;
 	font-family: "NintendoDS-BIOS";
 	font-size: 1.25rem;
-	letter-spacing: 0.033333333333333em;
+	letter-spacing: 0.025em;
 	color: var(--text);
 	max-height: 98vh;
 
@@ -271,7 +271,10 @@ h3 {
 }
 
 h4 {
-	font-size: 1.5rem;
+	font-family: "TamaConnect";
+	font-weight: normal;
+	font-size: 1rem;
+	color: var(--accent);
 }
 
 h5 {
@@ -280,9 +283,8 @@ h5 {
 }
 
 h6 {
-	font-size: 1.3rem;
-	color: var(--accent);
-	padding-left: 12px;
+	font-family: "TamaConnect";
+	font-size: .7rem;
 }
 
 /* prevents overflow on smaller screens */
@@ -349,4 +351,15 @@ a:visited {
 iframe {
 	border-radius: 10px;
 	margin-top: 7px;
+}
+
+.pixel img {
+	width: 15px;
+	height: auto;
+}
+
+hr {
+	border: 1px solid;
+	color: var(--accent);
+	width: 400px;
 }
