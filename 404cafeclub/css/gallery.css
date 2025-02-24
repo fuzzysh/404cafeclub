@@ -26,12 +26,8 @@
         z-index: 1;
         border-style: none;
 }
-#gallery a {
-        width: 33%;
-        flex-grow: 1;
-}
 .gallery-item {
-        width: 100%;
+        width: 33%;
         height: 210px;
         padding: 8.3px;
         object-fit: cover;
