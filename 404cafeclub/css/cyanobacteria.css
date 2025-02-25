@@ -370,6 +370,22 @@ hr {
         text-wrap: nowrap; /* if the heading is really long this will look weird, so you might want to change it */
 }
 
+.backslash {
+	display: inline-block;
+	transform: scaleX(-1);
+}
+
+dd::before {
+	content: "␩";
+	color: #141a38;
+}
+
+.blurb {
+	margin-left: 2.5rem;
+}
+
 @media only screen and (max-width: 773px) {
         .scroll{ max-height: 500px;}
+		header span {
+			font-size: 2.75rem;}
 }

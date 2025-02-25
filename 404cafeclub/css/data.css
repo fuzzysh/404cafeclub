@@ -50,11 +50,6 @@ h6 {
 	padding-left: 12px;
 }
 
-dd::before {
-	content: "␩";
-	color: #141a38;
-}
-
 .scrollContainer {
 	display: flex;
 	align-items: stretch;
