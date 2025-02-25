@@ -61,6 +61,7 @@ h6 {
 	position: relative;
 	overflow-y: auto;
 	scrollbar-color: #919ed7 #e5e8f5;
+	scrollbar-width: thin;
 }
 
 .scroll>div {

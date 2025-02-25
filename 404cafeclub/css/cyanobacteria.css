@@ -328,6 +328,7 @@ a:visited {
 	overflow-x: hidden;
 	max-height: 950px; /* this is hardcoded to make it match the length of the content to its left */
 	scrollbar-color: #919ed7 #e5e8f5;
+	scrollbar-width: thin;
 	border-style: none;
 }
 
