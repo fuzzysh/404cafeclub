@@ -28,6 +28,9 @@
 	--gradientTop: #ffffff;
 	--gradientBottom: #EEF4FF;
 	--bgimage: url('../images/bg/bg-ds_blue.png');
+	--cursorImage: url('../images/cursors/cursor-light.png');
+	--cursorPointerImage: url('../images/cursors/hand-light.png');
+	--cursorTextImage: url('../images/cursors/text-light.png');
 }
 
 header {
@@ -48,6 +51,9 @@ header {
 		--gradientBottom: #262f5e;
 		--gradientTop: #445899;
 		--bgimage: url('../images/bg/bg-ds_blueinvert.png');
+		--cursorImage: url('../images/cursors/cursor-dark.png');
+		--cursorPointerImage: url('../images/cursors/hand-dark.png');
+		--cursorTextImage: url('../images/cursors/text-dark.png');
 
 		a {
 			color: #89b2ff;
@@ -82,12 +88,24 @@ body {
 	font-size: 1.25rem;
 	letter-spacing: 0.025em;
 	color: var(--text);
+	cursor: var(--cursorImage), auto;
 
 	/* page background pattern */
 
 	background-image: var(--bgimage);
 	background-attachment: fixed;
 	animation: bgMove 60s linear infinite;
+}
+
+a:link, button{
+ cursor: var(--cursorPointerImage), pointer;
+}
+a[href]:active {
+ cursor: var(--cursorPointerImage), grabbing;
+}
+
+*:not(:empty):not(img):not(svg):active {
+	cursor: var(--cursorTextImage), text;
 }
 
 @keyframes bgMove {
