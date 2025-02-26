@@ -321,13 +321,25 @@ a:visited {
 }
 
 .scroll {
-        display: flex;
-        flex-direction: column;
+	display: flex;
+	flex-direction: column;
 	flex-grow: 1;
-	overflow-y: scroll;
-        max-height: 950px; /* this is hardcoded to make it match the length of the content to its left */
+	overflow-y: auto;
+	overflow-x: hidden;
+	max-height: 950px; /* this is hardcoded to make it match the length of the content to its left */
 	scrollbar-color: #919ed7 #e5e8f5;
-        border-style: none;
+	scrollbar-width: thin;
+	border-style: none;
+}
+
+/* use this to force a horizontal scroll bar */
+.scroll-x {
+	overflow-x: scroll;
+}
+
+/* use this to force a verticla scroll bar */
+.scroll-y {
+	overflow-y: scroll;
 }
 
 .scroll article {

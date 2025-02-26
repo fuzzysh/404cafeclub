@@ -59,8 +59,9 @@ h6 {
 .scroll {
 	flex-grow: 1;
 	position: relative;
-	overflow-y: scroll;
+	overflow-y: auto;
 	scrollbar-color: #919ed7 #e5e8f5;
+	scrollbar-width: thin;
 }
 
 .scroll>div {
