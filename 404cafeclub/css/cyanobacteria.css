@@ -130,6 +130,7 @@ background-color: var(--gradientBottom);
 /* these control the column widths */
 .small {
 	flex: 1 1 9%;
+	min-width: 198px;
 }
 
 .large {
@@ -343,7 +344,7 @@ a:visited {
 }
 
 .scroll article {
-        margin-bottom: 25px;
+        margin-bottom: 15px;
 }
 
 .scroll p {
