@@ -82,12 +82,21 @@ body {
 	font-size: 1.25rem;
 	letter-spacing: 0.025em;
 	color: var(--text);
-	max-height: 98vh;
 
 	/* page background pattern */
 
-	background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
 	background-image: var(--bgimage);
+	background-attachment: fixed;
+	animation: bgMove 60s linear infinite;
+}
+
+@keyframes bgMove {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
 }
 
 /* original styling
@@ -113,7 +122,7 @@ body {
 	background-color: var(--bg);
 }
 
-/* original container styling	
+/* original container styling
 background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, var(--gradientBottom) 9px ), repeating-linear-gradient( var(--bg), var(--bg));
 background-color: var(--gradientBottom);
 */
@@ -161,7 +170,7 @@ header span {
 }
 
 /* orignal header styling
-background-position: center; 
+background-position: center;
 font-weight: bold;
 text-shadow: 1px 1px var(--text),
 		-1px 1px var(--text),
@@ -311,28 +320,40 @@ a:visited {
 	text-align: center;
 }
 
-.scrollContainer {
-	display: flex;
-	align-items: stretch;
-	flex-direction: column;
-}
-
 .scroll {
+	display: flex;
+	flex-direction: column;
 	flex-grow: 1;
-	position: relative;
-	overflow-y: scroll;
+	overflow-y: auto;
+	overflow-x: hidden;
+	max-height: 950px; /* this is hardcoded to make it match the length of the content to its left */
 	scrollbar-color: #919ed7 #e5e8f5;
+	scrollbar-width: thin;
+	border-style: none;
 }
 
-.scroll>div {
-	position: absolute;
-	width: 100%;
-	padding-right: 10px;
+/* use this to force a horizontal scroll bar */
+.scroll-x {
+	overflow-x: scroll;
+}
+
+/* use this to force a verticla scroll bar */
+.scroll-y {
+	overflow-y: scroll;
+}
+
+.scroll article {
+        margin-bottom: 25px;
+}
+
+.scroll p {
+        line-height: .75em;
 }
 
 .align {
 	display: flex;
 	justify-content: center;
+        align-items: center;
 	gap: 10px;
 }
 
@@ -362,4 +383,30 @@ hr {
 	border: 1px solid;
 	color: var(--accent);
 	width: 400px;
+}
+
+.analysis-heading {
+        font-weight: bold;
+        text-align: center;
+        text-wrap: nowrap; /* if the heading is really long this will look weird, so you might want to change it */
+}
+
+.backslash {
+	display: inline-block;
+	transform: scaleX(-1);
+}
+
+dd::before {
+	content: "␩";
+	color: #141a38;
+}
+
+.blurb {
+	margin-left: 2.5rem;
+}
+
+@media only screen and (max-width: 773px) {
+        .scroll{ max-height: 500px;}
+		header span {
+			font-size: 2.75rem;}
 }
