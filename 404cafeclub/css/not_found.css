@@ -78,7 +78,7 @@ dd::before {
 
 .squibby {
 	text-align: center;
-	width: 400px;
+	max-width: 400px;
 	margin: auto;
 }
 
@@ -86,4 +86,14 @@ dd::before {
 	width: 50px;
 	height: auto;
 	image-rendering: pixelated;
+}
+
+@media only screen and (max-width: 773px) {
+	h1 {
+		font-size: 1rem;
+	}
+
+	h2 {
+		font-size: 0.75rem;
+	}
 }
