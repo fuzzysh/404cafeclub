@@ -19,6 +19,11 @@
 	src: url(../fonts/YutaONE_curated/NocturnalSubway/NocturnalSubway.otf);
 }
 
+@font-face {
+	font-family: "GAS";
+	src: url(../fonts/GAS_____.TTF);
+}
+
 /* start light mode styling */
 :root {
 	--text: #49628a;
