@@ -1,0 +1,13 @@
+ul {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+li {
+	margin-left: -5px;
+}
+
+hr {
+    max-width: 1px;
+    border: none;
+}
