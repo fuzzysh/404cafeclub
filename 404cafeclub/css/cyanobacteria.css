@@ -19,6 +19,11 @@
 	src: url(../fonts/YutaONE_curated/NocturnalSubway/NocturnalSubway.otf);
 }
 
+@font-face {
+	font-family: "GAS";
+	src: url(../fonts/GAS_____.TTF);
+}
+
 /* start light mode styling */
 :root {
 	--text: #49628a;
@@ -28,6 +33,9 @@
 	--gradientTop: #ffffff;
 	--gradientBottom: #EEF4FF;
 	--bgimage: url('../images/bg/bg-ds_blue.png');
+	--cursorImage: url('../images/cursors/tenshicursor.png');
+	--cursorPointerImage: url('../images/cursors/tenshicursor_select.png');
+	--cursorTextImage: url('../images/cursors/tenshicursor_text.png');
 }
 
 header {
@@ -48,6 +56,9 @@ header {
 		--gradientBottom: #262f5e;
 		--gradientTop: #445899;
 		--bgimage: url('../images/bg/bg-ds_blueinvert.png');
+		--cursorImage: url('../images/cursors/tenshicursor.png');
+		--cursorPointerImage: url('../images/cursors/tenshicursor_select.png');
+		--cursorTextImage: url('../images/cursors/tenshicursor_text.png');
 
 		a {
 			color: #89b2ff;
@@ -82,6 +93,8 @@ body {
 	font-size: 1.25rem;
 	letter-spacing: 0.025em;
 	color: var(--text);
+	cursor: var(--cursorImage), auto;
+
 
 	/* page background pattern */
 
@@ -90,13 +103,27 @@ body {
 	animation: bgMove 60s linear infinite;
 }
 
+a:link,
+button {
+	cursor: var(--cursorPointerImage), pointer;
+}
+
+a[href]:active {
+	cursor: var(--cursorPointerImage), grabbing;
+}
+
+*:not(:empty):not(img):not(svg):active {
+	cursor: var(--cursorTextImage), text;
+}
+
 @keyframes bgMove {
-    0% {
-        background-position: 0% 0%;
-    }
-    100% {
-        background-position: 100% 100%;
-    }
+	0% {
+		background-position: 0% 0%;
+	}
+
+	100% {
+		background-position: 100% 100%;
+	}
 }
 
 /* original styling
@@ -130,6 +157,7 @@ background-color: var(--gradientBottom);
 /* these control the column widths */
 .small {
 	flex: 1 1 9%;
+	min-width: 198px;
 }
 
 .large {
@@ -326,7 +354,8 @@ a:visited {
 	flex-grow: 1;
 	overflow-y: auto;
 	overflow-x: hidden;
-	max-height: 950px; /* this is hardcoded to make it match the length of the content to its left */
+	max-height: 950px;
+	/* this is hardcoded to make it match the length of the content to its left */
 	scrollbar-color: #919ed7 #e5e8f5;
 	scrollbar-width: thin;
 	border-style: none;
@@ -343,17 +372,17 @@ a:visited {
 }
 
 .scroll article {
-        margin-bottom: 25px;
+	margin-bottom: 15px;
 }
 
 .scroll p {
-        line-height: .75em;
+	line-height: .75em;
 }
 
 .align {
 	display: flex;
 	justify-content: center;
-        align-items: center;
+	align-items: center;
 	gap: 10px;
 }
 
@@ -386,9 +415,10 @@ hr {
 }
 
 .analysis-heading {
-        font-weight: bold;
-        text-align: center;
-        text-wrap: nowrap; /* if the heading is really long this will look weird, so you might want to change it */
+	font-weight: bold;
+	text-align: center;
+	text-wrap: nowrap;
+	/* if the heading is really long this will look weird, so you might want to change it */
 }
 
 .backslash {
@@ -403,10 +433,27 @@ dd::before {
 
 .blurb {
 	margin-left: 2.5rem;
+	margin-right: 1.5rem;
+}
+
+.margin {
+	margin-left: 1rem;
 }
 
 @media only screen and (max-width: 773px) {
-        .scroll{ max-height: 500px;}
-		header span {
-			font-size: 2.75rem;}
+	.scroll {
+		max-height: 500px;
+	}
+
+	header span {
+		font-size: 2.75rem;
+	}
+
+	h1 {
+		font-size: 1.5rem;
+	}
+
+	h2 {
+		font-size: 1rem;
+	}
 }

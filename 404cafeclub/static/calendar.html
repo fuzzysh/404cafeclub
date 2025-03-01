@@ -1,6 +1,6 @@
 <head>
-    <!----- 
- 
+    <!-----
+
                                      ,
               ,-.       _,---._ __  / \
              /  )    .-'       `./ /   \
@@ -13,7 +13,7 @@
               |  | (   |            | /
               )  |  \  `.___________|/
               `--'   `--'
- 
+
     * nintendos calendar lovingly recreated by june @ loveberry.nekoweb.org / layercake.neocities.org
  	* source code: https://www.geeksforgeeks.org/how-to-design-a-simple-calendar-using-javascript/
 	* version WITH the navigation (arrows to see different months) for other version please go here
@@ -25,7 +25,36 @@
         @font-face {
             font-family: ndsbios;
             src: url(../fonts/nds-true-bios.otf);
-}
+        }
+
+        :root {
+            --cursorImage: url('../images/cursors/cursor-light.png');
+            --cursorPointerImage: url('../images/cursors/hand-light.png');
+            --cursorTextImage: url('../images/cursors/text-light.png');
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --cursorImage: url('../images/cursors/cursor-dark.png');
+                --cursorPointerImage: url('../images/cursors/hand-dark.png');
+                --cursorTextImage: url('../images/cursors/text-dark.png');
+            }
+        }
+
+        body {
+	        cursor: var(--cursorImage), auto;
+        }
+
+        a:link, button{
+            cursor: var(--cursorPointerImage), pointer;
+        }
+        a[href]:active {
+            cursor: var(--cursorPointerImage), grabbing;
+        }
+
+        *:not(:empty):not(img):not(svg):active {
+            cursor: var(--cursorTextImage), text;
+        }
 
         /* needs below star styling or it all breaks*/
         * {
@@ -251,11 +280,11 @@
                 lit += `<li class="inactive">${i - dayend + 1}</li>`
             }
 
-            // Update the text of the current date element 
+            // Update the text of the current date element
             // with the formatted current month and year
             currdate.innerText = `${months[month]} ${year}`;
 
-            // update the HTML of the dates element 
+            // update the HTML of the dates element
             // with the generated calendar
             day.innerHTML = lit;
         }
@@ -275,7 +304,7 @@
                 // Check if the month is out of range
                 if (month < 0 || month > 11) {
 
-                    // Set the date to the first day of the 
+                    // Set the date to the first day of the
                     // month with the new year
                     date = new Date(year, month, new Date().getDate());
 
@@ -292,7 +321,7 @@
                     date = new Date();
                 }
 
-                // Call the manipulate function to 
+                // Call the manipulate function to
                 // update the calendar display
                 manipulate();
             });
